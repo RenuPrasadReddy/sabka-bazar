@@ -1,0 +1,31 @@
+<Section class="product-container">
+    <div class="product-left">
+        <ul class="cat-list">
+            {{#each categories}}
+                <li>{{name}}</li>
+            {{/each}}
+        </ul>
+    </div>
+
+    <div class="product-right">
+        <div class="row">
+            {{#each products}}
+                <div class="product-card">
+                    <p class="product-title">{{name}}</p>
+                    <div class="product-body">
+                        <div class="product-img">
+                            <img src={{imageURL}} alt={{name}}>
+                        </div>
+                        <div class="product-desc">
+                            <p>{{description}}</p>
+                        </div>
+                        <div class="product-footer">
+                            <p>MRP Rs.{{price}}</p>
+                            <button class="btn btn-bazar btn-buy" id={{id}}>Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</Section>

@@ -1,0 +1,96 @@
+@import 'variables';
+
+@mixin linkStyle {
+    a {
+        text-decoration: none;
+        color: $color-linkfont;
+        font-size: 16px;
+    }
+}
+
+@mixin btn {
+    display: block;
+    width: 100%;
+    background-color: rgb(221, 38, 53);
+}
+
+// @mixin colFlexCenter {
+
+// }
+
+.header_container {
+    width: 100%;
+    // background-color: salmon;
+    box-shadow: 0px 6px 11px -4px rgba(0,0,0,0.75);
+-webkit-box-shadow: 0px 6px 11px -4px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 6px 11px -4px rgba(0,0,0,0.75);
+height: 70px;
+}
+
+.header_row {
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 100%;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: 600;
+
+    a:hover {
+        color: $color-linkfontLight;
+        // color: red;
+    }
+    
+    
+    &-left {
+        @include linkStyle;
+        flex-basis: 40%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .logo img{
+            height: 60px;
+        } 
+
+        
+        a:first-child {
+            margin-right: 16px;
+        }
+
+        
+    }
+    &-right {
+        @include linkStyle;
+        flex-basis: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        height: 32px; //need to push cart botton to edge
+
+        button {
+            text-align: center;
+        }
+        span i {
+            margin-right: 5px;
+        }
+        .btns {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: column;
+           
+            .btn {
+                // height: 50px;
+                border-radius: 0;
+                background-color: $color-darkgrey;
+            }
+            .cart-text {
+                color: $color-black;
+            }
+        }
+    }
+
+   
+}

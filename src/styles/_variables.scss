@@ -7,3 +7,32 @@ $color-white: #fff;
 $color-black: rgb(24, 20, 20);
 $color-grey: rgb(242, 243, 237);
 $color-darkgrey: rgb(164, 165, 160);
+
+/*
+// Mixins
+*/
+
+@mixin sm {
+    @media (max-width: 576px) {
+        @content;
+    }
+}
+
+@mixin md {
+    @media (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin home1000{
+    @media (max-width: 1000px) {
+        @content;
+    }
+}
+
+
+
+// helper
+.hidden {
+    display: none !important;
+}

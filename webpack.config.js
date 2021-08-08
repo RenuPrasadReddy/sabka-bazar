@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
 
-  entry: ['./src/js/index.js', "./src/register/register.js", "./src/signIn/signIn.js", "./src/products/products.js"],
+  entry: ['./src/js/index.js', "./src/register/register.js", "./src/signIn/signIn.js", "./src/products/products.js", "./src/cart/cart.js"],
 
   output: {
     path: path.resolve(__dirname, 'dist'),

@@ -37,6 +37,15 @@ height: 70px;
     align-items: center;
     font-weight: 600;
 
+    @include md {
+        width: 80%;
+        justify-content: space-between;
+        padding: 0;
+    }
+    @include sm {
+        width: 95%;
+    }
+
     a:hover {
         color: $color-linkfontLight;
         // color: red;
@@ -51,11 +60,28 @@ height: 70px;
         align-items: center;
         .logo img{
             height: 60px;
+
+            @include sm {
+                height: 35px;
+            }
         } 
 
         
         a:first-child {
             margin-right: 16px;
+        }
+
+        @media (max-width: 874px) {
+            flex-basis: auto;
+        }
+
+        @include sm {
+            justify-content: flex-start;
+            .home-prod{
+                display: none;
+            }
+
+
         }
 
         
@@ -68,6 +94,16 @@ height: 70px;
         justify-content: center;
         align-items: flex-end;
         height: 32px; //need to push cart botton to edge
+
+        @media (max-width: 874px) {
+            flex-basis: auto;
+        }
+        @include sm {
+            .sign-reg {
+                display: none;
+            }
+
+        }
 
         button {
             text-align: center;
@@ -85,6 +121,12 @@ height: 70px;
                 // height: 50px;
                 border-radius: 0;
                 background-color: $color-darkgrey;
+            
+                @include sm {
+                    padding: 4px;
+                    width: 85px;
+                    font-size: 16px;
+                }
             }
             .cart-text {
                 color: $color-black;

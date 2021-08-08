@@ -1,4 +1,12 @@
+<div class="categories-mobile">
+    <select class="form-select categories-mobile-dropdown" aria-label="categories">
+        {{#each categories}}
+            <option value={{key}}>{{name}}</option>
+        {{/each}}
+    </select>
+</div>
 <Section class="product-container">
+
     <div class="product-left">
         <ul class="cat-list">
             {{#each categories}}
@@ -13,11 +21,14 @@
                 <div class="product-card">
                     <p class="product-title">{{name}}</p>
                     <div class="product-body">
-                        <div class="product-img">
-                            <img src={{imageURL}} alt={{name}}>
-                        </div>
-                        <div class="product-desc">
-                            <p>{{description}}</p>
+                        <div class="tab">
+                            <div class="product-img">
+                                <img src={{imageURL}} alt={{name}}>
+                            </div>
+                            <div class="product-desc">
+                                <p>{{description}}</p>
+                            </div>
+
                         </div>
                         <div class="product-footer">
                             <p>MRP Rs.{{price}}</p>

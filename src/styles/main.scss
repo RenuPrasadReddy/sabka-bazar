@@ -3,28 +3,6 @@
 @import 'header';
 
 
-/*
-// Mixins
-*/
-
-@mixin sm {
-    @media (max-width: 576px) {
-        @content;
-    }
-}
-
-@mixin md {
-    @media (max-width: 768px) {
-        @content;
-    }
-}
-
-@mixin home1000{
-    @media (max-width: 1000px) {
-        @content;
-    }
-}
-
 
 .row {
     margin: 0 auto;
@@ -132,7 +110,7 @@
 
 // footer section
 footer {
-    margin: 40px 0;
+    margin: 30px 0 0 0;;
     height: 50px;
     background-color: rgb(151, 148, 148, 0.5);
     @include centerFlex;
@@ -274,7 +252,9 @@ footer {
         // @media (max-width: 934px) {
         //     flex-basis: 30%;
         // }
-        
+        @include sm {
+            display: none;
+        }
 
         background-color:rgba(156, 151, 152, 0.3);
         .cat-list {
@@ -311,9 +291,10 @@ footer {
         margin: 5px;
         background-color: $color-white;
 
-        // @include md {
-        //    max-width:280px;
-        // }
+        @include md {
+           max-width:260px;
+           max-height: 300px;
+        }
 
         .product-title {
             margin-bottom: 10px;
@@ -331,10 +312,18 @@ footer {
             flex-direction: column;
             
             @include md {
-                flex-direction: row;
-                flex-wrap: wrap;
+                .tab {
+                    height: 100px;
+                    display: flex;
+                    flex-direction: row;
+                    // flex-wrap: wrap;
+                }
             }
             height: 420px;
+             @include md {
+                 height: 166px;
+             }
+            
             .product-img {
                 min-height:200px;
                 img { 
@@ -342,9 +331,9 @@ footer {
                     object-fit: cover;
                     margin-bottom: 20px;
 
-                    @include md {
-                        width: 30%;
-                    }
+                    // @include md {
+                    //     width: 30%;
+                    // }
                 }
             }
 
@@ -355,6 +344,10 @@ footer {
                 p {
                     padding: 5px; 
                     margin: 0;
+                }
+
+                @include md{
+                    font-size: 12px;
                 }
             }
             .product-footer {
@@ -390,6 +383,22 @@ footer {
     }
 }
 
+.main-content {
+    .categories-mobile-dropdown {
+        display: none;
+        @include sm {
+            background-color: $color-darkpink;
+            display: block;
+
+            option {
+                background-color: $color-white;
+            }
+        }
+    }
+}
+
+
+// modal
 .modal {
 
     &-content{
@@ -438,6 +447,10 @@ footer {
                 margin-bottom: 5px;
                 img {
                     height: 80px;
+
+                    @include sm {
+                        height: 44px;
+                    }
                 }
                 .name-badge {
                     // border: 1px solid green;
@@ -489,6 +502,7 @@ footer {
         }
 
         .modal-footer {
+            background-color: $color-white;
             .btn-bazar {
                 display: block;
                 width: 100%;
@@ -504,5 +518,55 @@ footer {
                 justify-content: space-between;
             }
         }
+    }
+}
+
+
+// toast
+.toast {
+    position: fixed;
+    z-index: 99999;
+    opacity: 1 !important;
+
+    top: 80%;
+    left: 30%;
+    transform: translate(50%, 50%);
+    // border: #000;
+    background-color: rgb(219, 206, 206);
+    color: rgb(10, 10, 10);
+} 
+@media (max-width: 768px) {
+    /* modal */
+
+    .modal {
+        height: calc(100vh - 70px);
+        top: 67px;
+    }
+    .modal-content {
+        width: 100%;
+    }
+
+    .modal-backdrop{
+        opacity: 1;
+    }
+    .modal-header {
+        background-color: $color-white !important;
+        margin-top: 20px;
+        .modal-title {
+            color: $color-black;
+        }
+
+        .close{
+            color: $color-black !important;
+        }
+    }
+    .modal-backdrop.show {
+        opacity: 0;
+    }
+
+
+    .modal-dialog {
+        max-width: 100%;
+        margin: 0;
     }
 }
